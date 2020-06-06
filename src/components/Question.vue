@@ -1,32 +1,39 @@
 <template>
   <div class="question">
     <div class="qestion-number">{{ number }}</div>  
+    <textarea v-model="formula" cols="30" rows="10"></textarea>
+    <vue-mathjax :formula="formula"></vue-mathjax>
     <div class="question-text">{{ text }}</div>
     <div class="question-answer"><input v-model="answer" ></div>
   </div>
 </template>
 
 <script>
+import { VueMathjax } from 'vue-mathjax'
 export default {
-  name: 'HelloWorld',
+  name: 'Question',
+  components: {
+    'vue-mathjax': VueMathjax
+  },
   props: { 
     number: Number, 
-    text: String, 
+    text: String
   }, 
   data: function() { 
     return { 
-      answer: ''    
+      answer: '',
+      formula: 'if (ax^2 +bx+c = 0) then $$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$'
     } 
   }, 
   computed: { 
      
   }, 
   
-  watch: { 
-    answer: function (value, oldValue) { 
-      return value + oldValue
-     } 
-  },
+  //watch: { 
+  //  answer: function (value, oldValue) { 
+  //    return value + oldValue
+  //   } 
+  //},
 }
 </script>
 

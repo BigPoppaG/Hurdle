@@ -1,6 +1,7 @@
 <template>
+
   <div id="app">
-    <Question number=1 text="What is 37 - 28?"/>
+    <Question />
   </div>
 </template>
 
@@ -11,7 +12,12 @@ export default {
   name: 'App',
   components: {
     Question
-  }
+  },
+  mounted() {
+    let mathjaxScript = document.createElement('script')
+    mathjaxScript.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML')
+    document.head.appendChild(mathjaxScript)
+  },
 }
 </script>
 

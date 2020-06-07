@@ -1,10 +1,9 @@
 <template>
   <div class="question">
-    <div class="qestion-number">{{ number }}</div>  
-    <textarea v-model="formula" cols="30" rows="10"></textarea>
-    <vue-mathjax :formula="formula"></vue-mathjax>
-    <div class="question-text">{{ text }}</div>
-    <div class="question-answer"><input v-model="answer" ></div>
+    <vue-mathjax :formula="question.text"></vue-mathjax>
+    <br/>
+    <img v-if: question.image v-bind:src="question.image">
+    <div class="question-answer"><input @keyup.enter="submit" v-model="answer"></div>
   </div>
 </template>
 
@@ -16,19 +15,22 @@ export default {
     'vue-mathjax': VueMathjax
   },
   props: { 
-    number: Number, 
-    text: String
+    question: Object
   }, 
   data: function() { 
     return { 
-      answer: '',
-      formula: 'if (ax^2 +bx+c = 0) then $$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$'
+      answer: ''
     } 
   }, 
   computed: { 
      
   }, 
-  
+  method: {
+    submit: function() {
+      //answer = 'test enter'
+    }
+  }
+
   //watch: { 
   //  answer: function (value, oldValue) { 
   //    return value + oldValue
@@ -39,18 +41,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>

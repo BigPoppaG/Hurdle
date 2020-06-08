@@ -1,7 +1,7 @@
 <template>
   <div class="question">
     <vue-mathjax :formula="question.text"></vue-mathjax>
-    <br/>
+    <br>
     <img v-if: question.image v-bind:src="question.image">
     <div class="question-answer"><input @keyup.enter="submit" v-model="answer"></div>
   </div>

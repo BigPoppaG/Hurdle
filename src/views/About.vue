@@ -1,5 +1,18 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>Test a question here</h1>
+    <QuestionEdit />
   </div>
 </template>
+
+
+<script>
+import QuestionEdit from '../components/QuestionEdit.vue'
+
+export default {
+  name: 'App',
+  components: {
+    QuestionEdit
+  },
+}
+</script>

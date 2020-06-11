@@ -5,7 +5,7 @@
       <v-container>
         <v-row>
           <v-col cols="2">
-            <v-icon mdi-chevron_left>left</v-icon>
+            <v-icon lg>mdi-chevron-left</v-icon>
           </v-col>
           <v-col cols="8"><question :question="questions[0]"/></v-col>
           <v-col allign-self="centre" cols="2">

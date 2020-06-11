@@ -4,13 +4,14 @@
       <v-row>
         <v-col cols="12"><vue-mathjax :formula="question.text"></vue-mathjax></v-col>
         <v-col cols="12"><img v-if: question.image v-bind:src="question.image"></v-col>
-      
+        <v-col cols="12" class="question-answer">
+          <v-text-field label="Answer" outlined>
+            <input @keyup.enter="submit" v-model="answer">
+          </v-text-field>
+        </v-col>      
       </v-row>
     </v-container>
-    
-    <br>
 
-    <div class="question-answer"><input @keyup.enter="submit" v-model="answer"></div>
   </div>
 </template>
 

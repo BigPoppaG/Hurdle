@@ -1,15 +1,15 @@
 <template>
   <div>
     <v-card>
-      <h2>Question {{ 1 }}</h2>
       <v-container>
-        <v-row>
+        <v-row>Question {{ 1 }}</v-row>  
+        <v-row align="center">
           <v-col cols="2">
-            <v-icon lg>mdi-chevron-left</v-icon>
+            <v-icon x-large>mdi-chevron-left</v-icon>
           </v-col>
           <v-col cols="8"><question :question="questions[0]"/></v-col>
           <v-col allign-self="centre" cols="2">
-            <v-icon mdi-chevron_right>right</v-icon>
+            <v-icon x-large>mdi-chevron-right</v-icon>
           </v-col>
         </v-row>
       </v-container>

@@ -1,8 +1,15 @@
 <template>
   <div class="question">
-    <vue-mathjax :formula="question.text"></vue-mathjax>
+    <v-container>
+      <v-row>
+        <v-col cols="12"><vue-mathjax :formula="question.text"></vue-mathjax></v-col>
+        <v-col cols="12"><img v-if: question.image v-bind:src="question.image"></v-col>
+      
+      </v-row>
+    </v-container>
+    
     <br>
-    <img v-if: question.image v-bind:src="question.image">
+
     <div class="question-answer"><input @keyup.enter="submit" v-model="answer"></div>
   </div>
 </template>

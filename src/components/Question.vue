@@ -1,8 +1,8 @@
 <template>
   <div class="question">
     <v-container>
-      <v-row>
-        <v-col cols="12"><vue-mathjax :formula="question.text"></vue-mathjax></v-col>
+      <v-row align-text-left>
+        <v-col cols="12"><vue-mathjax :formula="question.text" :options="{chtml: {displayAlign: 'left'}}"></vue-mathjax></v-col>
         <v-col cols="12"><img v-if: question.image v-bind:src="question.image"></v-col>
         <v-col cols="12" class="question-answer">
           <v-text-field label="Answer" outlined>
@@ -11,7 +11,6 @@
         </v-col>      
       </v-row>
     </v-container>
-
   </div>
 </template>
 

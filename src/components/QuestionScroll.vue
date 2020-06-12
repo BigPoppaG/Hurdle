@@ -7,7 +7,7 @@
           <v-col cols="2">
             <v-icon x-large>mdi-chevron-left</v-icon>
           </v-col>
-          <v-col cols="8"><question :question="questions[0]"/></v-col>
+          <v-col cols="8"><question :question="questions[1]"/></v-col>
           <v-col allign-self="centre" cols="2">
             <v-icon x-large>mdi-chevron-right</v-icon>
           </v-col>
@@ -34,7 +34,7 @@ export default {
             image: ''
           },
           {
-            text: 'if (ax^2 +bx+c = 0) then $$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$$',
+            text: 'if (ax^2 +bx+c = 0) then $$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$',
             image: ''
           },          
         ]

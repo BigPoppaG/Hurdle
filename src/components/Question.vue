@@ -6,10 +6,14 @@
         <v-col cols="12"><img v-if: question.image v-bind:src="question.image"></v-col>
         <v-col cols="12" class="question-answer">
           <v-text-field 
+            v-model="submitted"
             :label="question.cue" 
             outlined 
             autofocus
-            v-model="submitted"
+            :clearable="!correct"
+            :success="correct"
+            :error="!correct && !(this.submitted == null || this.submitted == '')"            
+            @keyup.enter="submit"
             :append-icon="correct ? 'mdi-check-bold' : unspecified">
           </v-text-field>
         </v-col>      
@@ -39,6 +43,9 @@ export default {
     },   
   }, 
   methods: {
+    submit() {
+      this.$emit('final')
+    }
   },
   watch: {
     submitted() { 

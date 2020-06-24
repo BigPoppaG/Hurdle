@@ -7,7 +7,7 @@
           <v-col cols="2">
             <v-icon x-large @click="previousQuestion">mdi-chevron-left</v-icon>
           </v-col>
-          <v-col cols="8" counter><question :question="questions[currentQuestion]" v-on:submitted="submitted"/></v-col>
+          <v-col cols="8" counter><question :question="questions[currentQuestion]" v-on:submitted="submitted" v-on:final="nextQuestion"/></v-col>
           <v-col cols="2">
             <v-icon x-large @click="nextQuestion">mdi-chevron-right</v-icon>
           </v-col>
@@ -32,14 +32,17 @@ export default {
         {
           text: 'What is the missing number: 17 + 4 = ?',
           answer: '21',
-          submitted: '',
-          cue: "Answer"
+          submitted: null,
+          cue: "Answer",
+          hint: {
+            hintMessage: 'Try harder',
+          }
         },
         {
           text: 'What is the missing number: ? - 17 = 20',
           image: '@\\public\favicon.ico',
           answer: '37',
-          submitted: '',
+          submitted: null,
         },          
       ],
       currentQuestion: 0,

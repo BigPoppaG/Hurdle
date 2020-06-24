@@ -30,7 +30,7 @@ export default {
   }, 
   data: function() { 
     return { 
-      submitted: ''
+      submitted: this.question.submitted
     } 
   }, 
   computed: { 
@@ -43,7 +43,10 @@ export default {
   watch: {
     submitted() { 
       this.$emit('submitted', this.submitted)
-    } 
+    },
+    question() {
+      this.submitted = this.question.submitted
+    }, 
   },
 }
 </script>

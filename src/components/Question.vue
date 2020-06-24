@@ -5,8 +5,12 @@
         <v-col cols="12"><vue-mathjax :formula="question.text" :options="{chtml: {displayAlign: 'left'}}"></vue-mathjax></v-col>
         <v-col cols="12"><img v-if: question.image v-bind:src="question.image"></v-col>
         <v-col cols="12" class="question-answer">
-          <v-text-field label="Answer" outlined>
-            <input @keyup.enter="submit" v-model="answer">
+          <v-text-field 
+            :label="question.cue" 
+            outlined 
+            autofocus
+            v-model="submitted"
+            :append-icon="correct ? 'mdi-check-bold' : unspecified">
           </v-text-field>
         </v-col>      
       </v-row>
@@ -26,27 +30,27 @@ export default {
   }, 
   data: function() { 
     return { 
-      answer: ''
+      submitted: ''
     } 
   }, 
   computed: { 
-     
+    correct: function() {
+      return this.question.answer == this.submitted
+    },   
   }, 
-  method: {
-    submit: function() {
-      //answer = 'test enter'
-    }
-  }
-
-  //watch: { 
-  //  answer: function (value, oldValue) { 
-  //    return value + oldValue
-  //   } 
-  //},
+  methods: {
+  },
+  watch: {
+    submitted() { 
+      this.$emit('submitted', this.submitted)
+    } 
+  },
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  /deep/.v-input__icon--append .v-icon { 
+      color: green;
+  }
 </style>

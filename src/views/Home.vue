@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is a question page</h1>
+  <div>
+    <h1>Year 2 Maths</h1>
       <question-scroll/>
   </div>
 </template>

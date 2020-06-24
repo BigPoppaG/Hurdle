@@ -2,12 +2,12 @@
   <div>
     <v-card>
       <v-container>
-        <v-row>Question {{ 1 }}</v-row>  
+        <v-row><h3>Hurdle {{ currentQuestion + 1 }}</h3></v-row>  
         <v-row align="center">
           <v-col cols="2">
             <v-icon x-large @click="previousQuestion">mdi-chevron-left</v-icon>
           </v-col>
-          <v-col cols="8"><question :question="questions[currentQuestion]"/></v-col>
+          <v-col cols="8" counter><question :question="questions[currentQuestion]" v-on:submitted="submitted"/></v-col>
           <v-col cols="2">
             <v-icon x-large @click="nextQuestion">mdi-chevron-right</v-icon>
           </v-col>
@@ -21,7 +21,7 @@
 import Question from '../components/Question.vue'
 
 export default {
-  name: 'App',
+  name: 'QuestionScroll',
   components: {
     Question
   },
@@ -30,14 +30,16 @@ export default {
     return {
       questions: [
         {
-          text: 'if (ax^2 +bx+c = 0) then $$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$$',
-          image: '',
-          answer: ''
+          text: 'What is the missing number: 17 + 4 = ?',
+          answer: '21',
+          submitted: '',
+          cue: "Answer"
         },
         {
-          text: 'question 2 what is 3+4?',
+          text: 'What is the missing number: ? - 17 = 20',
           image: '@\\public\favicon.ico',
-          answer: ''
+          answer: '37',
+          submitted: '',
         },          
       ],
       currentQuestion: 0,
@@ -46,11 +48,14 @@ export default {
 
   methods: {
     nextQuestion() {
-      this.currentQuestion = Math.min(this.currentQuestion+1, this.questions.length)
+      this.currentQuestion = Math.min(this.currentQuestion+1, this.questions.length-1)
     },
     previousQuestion() {
       this.currentQuestion = Math.max(this.currentQuestion-1, 0)
-    },    
+    },
+    submitted(newVal) {
+      this.questions[this.currentQuestion].submitted = newVal
+    },
   }
 
 }

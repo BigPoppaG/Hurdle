@@ -16,6 +16,8 @@
             @keyup.enter="submit"
             :append-icon="correct ? 'mdi-check-bold' : unspecified">
           </v-text-field>
+          <v-divider></v-divider>
+          <question-hint v-if: showHint :hint="question.hint"></question-hint>
         </v-col>      
       </v-row>
     </v-container>
@@ -24,10 +26,12 @@
 
 <script>
 import { VueMathjax } from 'vue-mathjax'
+import QuestionHint from '../components/QuestionHint.vue'
 export default {
   name: 'Question',
   components: {
-    'vue-mathjax': VueMathjax
+    'vue-mathjax': VueMathjax,
+    'question-hint': QuestionHint
   },
   props: { 
     question: Object
@@ -40,7 +44,10 @@ export default {
   computed: { 
     correct: function() {
       return this.question.answer == this.submitted
-    },   
+    },
+    showHint: function() {
+      return this.question.hint
+    },  
   }, 
   methods: {
     submit() {

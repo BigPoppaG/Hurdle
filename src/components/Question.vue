@@ -13,9 +13,9 @@
             autocomplete="off"
             :clearable="!correct"
             :success="correct"
-            :error="!correct && !(this.submitted == null || this.submitted == '')"            
+            :error="showError"            
             @keyup.enter="submit"
-            :append-icon="correct ? 'mdi-check-bold' : unspecified">
+            :append-icon="correct ? 'mdi-check-bold' : 'mdi-pencil'">
           </v-text-field>
 
           <question-hint v-if: showHint :hint="question.hint"></question-hint>
@@ -52,6 +52,9 @@ export default {
     showImage: function() {
       return "image" in this.question
     },      
+    showError: function() {
+      return !this.correct && !(this.submitted == null || this.submitted == '')
+    },          
   }, 
   methods: {
     submit() {
@@ -71,7 +74,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  /deep/.v-input__icon--append .v-icon { 
+/*   /deep/.v-input__icon--append .v-icon { 
       color: green;
-  }
+  } */
 </style>

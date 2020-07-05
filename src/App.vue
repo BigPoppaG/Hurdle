@@ -2,10 +2,10 @@
 
   <div id="app">
     <v-app>
-      <v-navigation-drawer app>
+<!--       <v-navigation-drawer app>
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link>        
-      </v-navigation-drawer>
+      </v-navigation-drawer> -->
 
       <v-app-bar app>
         <!-- -->

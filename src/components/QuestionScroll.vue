@@ -7,7 +7,7 @@
           <v-col cols="2">
             <v-icon v-show="currentQuestion > 0" x-large @click="previousQuestion">mdi-chevron-left</v-icon>
           </v-col>
-          <v-col cols="8" counter><question :question="questions[currentQuestion]" v-on:submitted="submitted" v-on:final="nextQuestion"/></v-col>
+          <v-col cols="8" counter><question :key="currentQuestion" :question="questions[currentQuestion]" v-on:submitted="submitted" v-on:final="nextQuestion"/></v-col>
           <v-col cols="2">
             <v-icon v-show="currentQuestion < questions.length - 1" x-large @click="nextQuestion">mdi-chevron-right</v-icon>
           </v-col>
@@ -60,16 +60,16 @@ export default {
           answer: '21',
           submitted: null,
           cue: "Answer",
-          //hint: {
-          //  hintMessage: 'Try harder',
-          //}
+          hint: {
+            coreObjective: 'Addition up to 100',
+          }
         },
         {
           text: 'What is the missing number: ? - 17 = 20',
           image: '@\\public\favicon.ico',
           answer: '37',
           submitted: null,
-          //hint: {},
+          cue: "Answer",
         },
         {
           text: '\\framebox(200,300){} - 17 = 20',

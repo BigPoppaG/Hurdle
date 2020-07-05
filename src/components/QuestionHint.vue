@@ -14,7 +14,7 @@
         </template>
 
         <v-card>
-        <div v-show="hint.coreObjective">
+        <div v-if='"coreObjective" in hint'>
         <v-card-title
             class="headline grey lighten-2"
             primary-title
@@ -29,7 +29,7 @@
 
         <v-divider></v-divider>
 
-        <div v-show="hint.expectedLevel">
+        <div v-if='"expectedLevel" in hint'>
         <v-card-title
             class="headline grey lighten-2"
             primary-title
@@ -44,7 +44,7 @@
 
         <v-divider></v-divider>
 
-        <div v-show="hint.suggestedPractice">
+        <div v-if='"suggestedPractice" in hint'>
         <v-card-title
             class="headline grey lighten-2"
             primary-title
@@ -59,7 +59,7 @@
 
         <v-divider></v-divider>
 
-        <div v-show="hint.practiceQuestions">
+        <div v-if='"practiceQuestions" in hint'>
         <v-card-title
             class="headline grey lighten-2"
             primary-title

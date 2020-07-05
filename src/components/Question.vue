@@ -47,13 +47,13 @@ export default {
       return this.question.answer == this.submitted
     },
     showHint: function() {
-      return "hint" in this.question
+      return "hint" in this.question && this.question.hint.length
     },  
     showImage: function() {
       return "image" in this.question
     },      
     showError: function() {
-      return !this.correct && !(this.submitted == null || this.submitted == '')
+      return false && !this.correct && !(this.submitted == null || this.submitted == '')
     },          
   }, 
   methods: {
@@ -76,5 +76,5 @@ export default {
 <style scoped>
 /*   /deep/.v-input__icon--append .v-icon { 
       color: green;
-  } */
+  }  seems to be necessary syntax if wanting to pass style to the appended icons*/
 </style>

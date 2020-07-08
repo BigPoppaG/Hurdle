@@ -36,33 +36,55 @@ export default {
           cue: 'Answer',
           hint: {
             coreObjective: 'Addition up to ten',
-            expectedLevel: 'This is a foundation skill that a lot of KS1 maths is built on. By KS1 children should know all the results of addition up to ten without calculation; so encourage your child to recite answers from memory before working it out.',
+            expectedLevel: 'This is a foundation skill that a lot of KS1 maths is built on. By KS1 you should know all the results of addition up to ten without calculation. Try to recall the answer from memory before working it out.',
             suggestedPractice: 'Initially, children can learn to answer this type of question by counting fingers or counting the total number of objects in two sets.<br>It is never too early to ask word problems and relate these to the idea of addition and the + symbol. <i>eg. Molly has 5 sweets and Jack has 2 sweets, how many do they have all together?</i><br>',
             practiceQuestions: [
               {
                 text: '7 + 2 = ?',
                 answer: '9',
                 submitted: null,
-                cue: 'Answer'
+                cue: 'Answer',
               },
               {
                 text: '3 + 5 = ?',
                 answer: '8',
                 submitted: null,
-                cue: 'Answer'                
+                cue: 'Answer',
+         
               },
+            ],
+            videoLinks: [
+              'https://www.youtube.com/embed/Vti8Iivvgag',
             ]
           },
         },
 
         {
-          text: 'What is the missing number: 17 + 4 = ?',
-          answer: '21',
+          text: '9 - 6 = ?',
+          answer: '3',
           submitted: null,
           cue: "Answer",
           hint: {
-            coreObjective: 'Addition up to 100',
-          }
+            coreObjective: 'Subtraction with single digits',
+            expectedLevel: 'This is a foundation skill that a lot of KS1 maths is built on. By KS1 you should know all the results of addition up to ten without calculation; so encourage your child to recite answers from memory before working it out.',
+            suggestedPractice: 'Initially, children can learn to answer this type of question by counting fingers or counting the total number of objects in two sets.<br>It is never too early to ask word problems and relate these to the idea of addition and the + symbol. <i>eg. Molly has 5 sweets and Jack has 2 sweets, how many do they have all together?</i><br>',
+            practiceQuestions: [
+              {
+                text: '7 - 2 = ?',
+                answer: '5',
+                submitted: null,
+                cue: 'Answer',
+                hint:{}
+              },
+              {
+                text: '8 - 3 = ?',
+                answer: '5',
+                submitted: null,
+                cue: 'Answer',
+                hint:{}                
+              },
+            ]
+          },
         },
         {
           text: 'What is the missing number: ? - 17 = 20',
@@ -73,7 +95,6 @@ export default {
         },
         {
           text: '\\framebox(200,300){} - 17 = 20',
-          //hint: {},
         }          
       ],
       currentQuestion: 0,

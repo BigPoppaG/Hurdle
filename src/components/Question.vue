@@ -47,7 +47,7 @@ export default {
       return this.question.answer == this.submitted
     },
     showHint: function() {
-      return "hint" in this.question && this.question.hint.length
+      return "hint" in this.question
     },  
     showImage: function() {
       return "image" in this.question

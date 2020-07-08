@@ -10,7 +10,7 @@
 import QuestionEdit from '../components/QuestionEdit.vue'
 
 export default {
-  name: 'App',
+  name: 'Edit',
   components: {
     QuestionEdit
   },

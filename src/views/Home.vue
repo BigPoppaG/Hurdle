@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Year 2 Maths</h1>
+    <h1>Key Stage 1 Maths</h1>
       <question-scroll/>
   </div>
 </template>
@@ -10,7 +10,7 @@
 import QuestionScroll from '../components/QuestionScroll.vue'
 
 export default {
-  name: 'App',
+  name: 'Home',
   components: {
     QuestionScroll
   }

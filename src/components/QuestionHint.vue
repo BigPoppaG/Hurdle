@@ -74,6 +74,32 @@
 
         <v-divider></v-divider>
 
+        <div v-if='"videoLinks" in hint'>
+        <v-card-title
+            class="headline grey lighten-2"
+            primary-title
+        >
+            Online Videos
+        </v-card-title>
+
+        <v-card-text class="text-sm-left">
+            <iframe 
+              v-for="link in hint.videoLinks" 
+              :key="link.id" 
+              :src="link"
+              width="560" 
+              height="315"
+              frameborder="0" 
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+              >
+              Video Unavalable
+            </iframe>    
+        </v-card-text>
+        </div>
+
+        <v-divider></v-divider>
+
         <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn
@@ -102,7 +128,11 @@ export default {
         dialog: false,
       }
     },
-
+    computed: {
+      hasCoreObjective() {
+        return "coreObjective" in this.hint  
+      }
+    }
 }
 </script>
 

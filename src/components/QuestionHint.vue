@@ -83,18 +83,49 @@
         </v-card-title>
 
         <v-card-text class="text-sm-left">
-            <iframe 
-              v-for="link in hint.videoLinks" 
-              :key="link.id" 
-              :src="link"
-              width="560" 
-              height="315"
-              frameborder="0" 
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen
-              >
-              Video Unavalable
-            </iframe>    
+            <v-list>
+                <v-list-item
+                v-for="link in hint.videoLinks" 
+                :key="link.id" 
+                >
+                    <iframe 
+                    :src="link + '? autoplay=0&rel=0'"
+                    width="560" 
+                    height="315"
+                    frameborder="0" 
+                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    >
+                    Video Unavalable
+                    </iframe>
+                </v-list-item>
+            </v-list>    
+        </v-card-text>
+        </div>
+
+        <v-divider></v-divider>
+
+        <div v-if='"learningResources" in hint'>
+        <v-card-title
+            class="headline grey lighten-2"
+            primary-title
+        >
+            Learning Resources
+        </v-card-title>
+
+        <v-card-text class="text-sm-left">
+            <v-list>
+                <v-list-item
+                v-for="resource in hint.learningResources" 
+                :key="resource.id" 
+                >
+                <v-list-item-content>
+                    <v-list-item-title>
+                       <a :href="resource.link" target="_blank">{{resource.description}}</a>
+                    </v-list-item-title>
+                </v-list-item-content>
+                </v-list-item>
+            </v-list>
         </v-card-text>
         </div>
 

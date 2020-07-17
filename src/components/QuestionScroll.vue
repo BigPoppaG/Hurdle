@@ -7,7 +7,7 @@
           <v-col cols="2">
             <v-icon v-show="currentQuestion > 0" x-large @click="previousQuestion">mdi-chevron-left</v-icon>
           </v-col>
-          <v-col cols="8" counter><question :key="currentQuestion" :question="questions[currentQuestion]" v-on:submitted="submitted" v-on:final="nextQuestion"/></v-col>
+          <v-col cols="8" counter><Question :key="currentQuestion" :question="questions[currentQuestion]" v-on:submitted="submitted" v-on:final="nextQuestion" primary></Question></v-col>
           <v-col cols="2">
             <v-icon v-show="currentQuestion < questions.length - 1" x-large @click="nextQuestion">mdi-chevron-right</v-icon>
           </v-col>
@@ -64,7 +64,7 @@ export default {
               '25': {
                 description: 'When you add two numbers it is',
                 image: '',
-                videoLinks: []
+                videoLinks: ''
               }  
             }
           },

@@ -9,7 +9,7 @@
             v-model="submitted"
             :label="question.cue" 
             outlined 
-            autofocus
+            :autofocus="primary"
             autocomplete="off"
             :clearable="!correct"
             :success="correct"
@@ -18,7 +18,7 @@
             :append-icon="correct ? 'mdi-check-bold' : 'mdi-pencil'">
           </v-text-field>
 
-          <question-hint v-if: showHint :hint="question.hint"></question-hint>
+          <question-hint v-if: showHint :hint="question.hint" :submitted="question.submitted"></question-hint>
         </v-col>      
       </v-row>
     </v-container>
@@ -35,7 +35,8 @@ export default {
     'question-hint': QuestionHint
   },
   props: { 
-    question: Object
+    question: Object,
+    primary: Boolean,
   }, 
   data: function() { 
     return { 

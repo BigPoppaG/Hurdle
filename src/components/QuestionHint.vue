@@ -44,6 +44,26 @@
 
         <v-divider></v-divider>
 
+        <div v-if='SubmittedCommorError'>
+        <v-card-title
+            class="headline grey lighten-2"
+            primary-title
+        >
+            Common Error!
+        </v-card-title>
+        <v-card-subtitle
+            class="headline grey lighten-2"
+            secondary-title
+        >
+            You said {{submitted}}
+        </v-card-subtitle>
+        <v-card-text class="text-sm-left">
+            <QuestionCommonError :error="hint.commonErrors[submitted]" :submitted="submitted"></QuestionCommonError>           
+        </v-card-text>
+        </div>
+
+        <v-divider></v-divider>
+
         <div v-if='"suggestedPractice" in hint'>
         <v-card-title
             class="headline grey lighten-2"
@@ -68,7 +88,7 @@
         </v-card-title>
 
         <v-card-text class="text-sm-left">
-            <question v-for="question in hint.practiceQuestions" :key="question.id" :question="question"/>
+            <Question v-for="question in hint.practiceQuestions" :key="question.id" :question="question"></Question>
         </v-card-text>
         </div>
 
@@ -149,9 +169,11 @@
 export default {
     name: 'QuestionHint',
     components: {
+      QuestionCommonError: () => import('../components/QuestionCommonError.vue'),
       Question: () => import('../components/Question.vue')  //Needed for recursive components
     },
     props: {
+      submitted: String,
       hint: Object,  
     },
     data () {
@@ -160,9 +182,9 @@ export default {
       }
     },
     computed: {
-      hasCoreObjective() {
-        return "coreObjective" in this.hint  
-      }
+      SubmittedCommorError() {
+        return ("commonErrors" in this.hint) && (this.submitted in this.hint.commonErrors)
+      } 
     }
 }
 </script>

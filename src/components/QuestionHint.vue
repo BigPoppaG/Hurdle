@@ -4,12 +4,13 @@
     >
         <template v-slot:activator="{ on, attrs }">
         <v-btn 
-            color="red lighten-2"
+            color="blue lighten-2"
             dark
             v-bind="attrs"
             v-on="on"
+            class="dialog-btn"
         >
-            Get Help
+            Teaching Guide
         </v-btn>
         </template>
 
@@ -189,6 +190,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+    .dialog-btn {
+        float: right;
+    }
 
 </style>

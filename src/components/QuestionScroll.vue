@@ -36,7 +36,7 @@ export default {
           cue: 'Answer',
           hint: {
             coreObjective: 'Addition up to ten',
-            suggestedPractice: 'Initially, children can learn to answer this type of question by counting fingers, counting the total number of objects in two sets, or by counting on from one of the numbers. It is good to combine this type of question with word problems and relate these to the idea of addition and the + symbol; eg. Molly has 5 sweets and Jack has 2 sweets, how many do they have all together? By Year 2, however, children should be able to recall all of the additions up to ten quickly from memory without any counting on. This should be practiced until all pairs of numbers up to ten can be recalled easily.',
+            suggestedPractice: "Initially, children can learn to answer this type of question by counting fingers, counting the total number of objects in two sets, or by counting on from one of the numbers. It is good to combine this type of question with word problems and relate these to the idea of addition and the + symbol; eg. Molly has 5 sweets and Jack has 2 sweets, how many do they have all together? By Year 2, however, children should be able to recall all of the additions up to ten quickly from memory without any counting on. This should be practiced until all pairs of numbers up to ten can be recalled easily. In particular, children should be fluent with 'number bonds', that is, pairs of numbers that add to give 10.",
             practiceQuestions: [
               {
                 text: '7 + 2 = ?',
@@ -47,6 +47,18 @@ export default {
               {
                 text: '3 + 5 = ?',
                 answer: '8',
+                submitted: null,
+                cue: 'Answer',
+              },
+              {
+                text: '7 + ? = 10',
+                answer: '3',
+                submitted: null,
+                cue: 'Answer',
+              },
+              {
+                text: '? + 4 = 10',
+                answer: '6',
                 submitted: null,
                 cue: 'Answer',
               },
@@ -62,7 +74,7 @@ export default {
             ],
             commonErrors: {
               '25': {
-                description: 'When you add two numbers it is',
+                description: "When you write 25 it doesn't mean 2 + 5, it means 2 tens plus 5 units. The meaning of the 2 changes because it is writen in the tens column. When we write 2 + 5 we are asking for 2 units plus 5 units which is 7 units, so the answer would just be writen as 7.",
                 image: '',
                 videoLinks: ''
               }  
@@ -108,6 +120,49 @@ export default {
         },
 
         {
+          text: '10 + 4 = ?',
+          answer: '14',
+          submitted: null,
+          cue: "Answer",
+          hint: {
+            coreObjective: 'Addition with tens and units',
+            suggestedPractice: 'It is fine initially to work this out like any other addition by counting on, 11, 12, 13, 14, to get the answer. But the point of the question is to develop fluency with the idea that 1 ten plus 4 units is written as 14; that is, a 1 in the tens column and a 4 in the units column. So it is possible, and easier, to just write the answer down without doing any counting on.',
+            practiceQuestions: [
+              {
+                text: '10 + 8 = ?',
+                answer: '18',
+                submitted: null,
+                cue: 'Answer',
+              },
+              {
+                text: '30 + 5 = ?',
+                answer: '35',
+                submitted: null,
+                cue: 'Answer',         
+              },
+              {
+                text: '70 + 4 = ?',
+                answer: '74',
+                submitted: null,
+                cue: 'Answer',         
+              },
+              {
+                text: '50 + ? = 56',
+                answer: '6',
+                submitted: null,
+                cue: 'Answer',         
+              },
+              {
+                text: '? + 2 = 42',
+                answer: '40',
+                submitted: null,
+                cue: 'Answer',         
+              },
+            ]
+          },
+        },
+
+        {
           text: '22 + 6 = ?',
           answer: '28',
           submitted: null,
@@ -131,7 +186,6 @@ export default {
             ]
           },
         },
-
 
         {
           text: '18 - 6 = ?',
@@ -215,7 +269,7 @@ export default {
           cue: "Answer",
             hint: {
             coreObjective: 'Adding multiple numbers',
-            suggestedPractice: "The key idea here is that you can add numbers in pairs and not care about the order. So 5 + 10 + 6 = 15 + 6 = 21. To see why this works you can use the idea of counting the total number of items in multiple groups and seeing that it doesn't matter what order you put the groups together.",
+            suggestedPractice: "The key idea here is that you can add numbers in pairs and not care about the order. So 7 + 3 + 2 = 10 + 2 = 12. To see why this works you can use the idea of counting the total number of items in multiple groups and seeing that it doesn't matter what order you put the groups together. This type of question is a good introduction to adding across a ten. ",
             practiceQuestions: [
               {
                 text: '8 + 2 + 7 = ?',

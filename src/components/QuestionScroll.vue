@@ -343,7 +343,11 @@ export default {
 
         {
           text: 'What is the total value of these coins?',
-          image: 'public\\Year 2\\Coins.png',
+          image: {
+            src: require('@/assets/images/Year 2/Coins.png'),
+            height: '238',
+            width: '892',
+          },  
           answer: ['57', '57p', '57 pence'],
           submitted: null,
           cue: 'Answer',

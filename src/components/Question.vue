@@ -3,7 +3,7 @@
     <v-container>
       <v-row align-text-left>
         <v-col cols="12"><vue-mathjax :formula="question.text" :options="{chtml: {displayAlign: 'left'}}"></vue-mathjax></v-col>
-        <v-col cols="12" v-show=showImage ><img v-bind:src="question.image"></v-col>
+        <v-col cols="12" v-if=showImage ><img class="question-image" :src="question.image.src" :height="question.image.height" :width="question.image.width"></v-col>
         <v-col cols="12" class="question-answer">
           <v-text-field 
             v-model="submitted"
@@ -75,7 +75,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/*   /deep/.v-input__icon--append .v-icon { 
-      color: green;
-  }  seems to be necessary syntax if wanting to pass style to the appended icons*/
+  .question-image {  width: 100%;  height: auto; }
 </style>

@@ -21,7 +21,7 @@
       </v-content>
 
       <v-footer app>
-        <!-- -->
+        <div><a href="mailto:info.hurdle@gmail.com">Contact us for more info</a></div>
       </v-footer>
     </v-app>
   </div>

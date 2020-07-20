@@ -177,7 +177,7 @@ export default {
       submitted: String,
       hint: Object,  
     },
-    data () {
+    data() {
       return {
         dialog: false,
       }

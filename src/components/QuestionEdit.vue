@@ -14,7 +14,7 @@ export default {
   components: {
     'vue-mathjax': VueMathjax
   },
-  data: function() { 
+  data() { 
     return { 
       formula: 'if (ax^2 +bx+c = 0) then $$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$',
       image: ''

@@ -1,8 +1,9 @@
 <template>
   <div>
-    <v-checkbox v-model="displayHelp" label="Need help?"></v-checkbox>
+    <v-btn class="help-btn" left @click.prevent="displayHelp = !displayHelp"><v-icon right x-large color=blue>mdi-account-question</v-icon></v-btn>
+    <div><v-checkbox v-model="displayHelp" label=""></v-checkbox></div>
     <v-banner v-model="displayHelp" single-line transition="slide-y-transition">
-      Placeholder for kid friendly help
+      text
       <template v-slot:actions="{ dismiss }">
         <v-btn text color="primary" @click="dismiss">OK</v-btn>
         <v-btn text color="primary">Still stuck</v-btn>
@@ -14,15 +15,21 @@
 <script>
   export default {
     name: 'QuestionHelp',
-
+    props: {
+      help: Object
+    },
     data() {
       return {
-        displayHelp: true,
+        displayHelp: false,
       }
     },
   }
 </script>
 
-<style>
+<style scoped>
+
+    .help-btn {
+        float: left;
+    }
 
 </style>

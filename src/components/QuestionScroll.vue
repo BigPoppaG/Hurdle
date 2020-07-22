@@ -352,40 +352,9 @@ export default {
           submitted: null,
           cue: 'Answer',
           hint: {
-            coreObjective: 'Compose a two digit number by counting tens and units',
-            expectedLevel: 'This is a foundation skill that a lot of KS1 maths is built on. By KS1 you should know all the results of addition up to ten without calculation. Try to recall the answer from memory before working it out.',
-            suggestedPractice: 'Initially, children can learn to answer this type of question by counting fingers or counting the total number of objects in two sets.<br>It is never too early to ask word problems and relate these to the idea of addition and the + symbol. <i>eg. Molly has 5 sweets and Jack has 2 sweets, how many do they have all together?</i><br>',
-            practiceQuestions: [
-              {
-                text: '7 + 2 = ?',
-                answer: '9',
-                submitted: null,
-                cue: 'Answer',
-              },
-              {
-                text: '3 + 5 = ?',
-                answer: '8',
-                submitted: null,
-                cue: 'Answer',
-              },
-            ],
-            videoLinks: [
-              'https://www.youtube.com/embed/Vti8Iivvgag',
-            ],
-            commonErrors: {
-              '25': {
-                description: '',
-                image: '',
-                videoLinks: []
-              }  
-            }
           },
         },
 
-
-        {
-          text: '\\framebox(200,300){} - 17 = 20',
-        }, 
       
       ],
       currentQuestion: 0,

@@ -36,7 +36,8 @@ export default {
           cue: 'Answer',
           hint: {
             coreObjective: 'Addition up to ten',
-            suggestedPractice: "Initially, children can learn to answer this type of question by counting fingers, counting the total number of objects in two sets, or by counting on from one of the numbers. It is good to combine this type of question with word problems and relate these to the idea of addition and the + symbol; eg. Molly has 5 sweets and Jack has 2 sweets, how many do they have all together? By Year 2, however, children should be able to recall all of the additions up to ten quickly from memory without any counting on. This should be practiced until all pairs of numbers up to ten can be recalled easily. In particular, children should be fluent with 'number bonds', that is, pairs of numbers that add to give 10.",
+            expectedLevel: "By Year 2,  children should be able to recall all of the additions up to ten quickly from memory without any counting on. This should be practiced until all pairs of numbers up to ten can be recalled easily. In particular, children should be fluent with 'number bonds', that is, pairs of numbers that add to give 10.",
+            suggestedPractice: "Initially, children can learn to answer this type of question by counting fingers, counting the total number of objects in two sets, or by counting on from one of the numbers. Encourage them to recall the answers without calculation and play games to help them learn the answers. Watch as they answer these types of question to see if they are still counting on and practice any pairs they haven't yet learned. It is good to combine this type of question with word problems and relate these to the idea of addition and the + symbol; eg. Molly has 5 sweets and Jack has 2 sweets, how many do they have all together? Use real world examples while you are out and about.",
             practiceQuestions: [
               {
                 text: '7 + 2 = ?',
@@ -88,8 +89,9 @@ export default {
           submitted: null,
           cue: "Answer",
           hint: {
-            coreObjective: 'Subtraction with single digits',
-            suggestedPractice: 'This type of question can be approached initially by counting from the starting number, or by removing items from an initial set and counting how many remain. Relate the question to word problems; eg. if Molly has 9 sweets and eats six of them how many does she have left? Also relate the question to the corresponding addition question: ? + 6 = 9. Use the students recall of the results of addition to help learn the results of these single digit subtractions. Eventually all single digit subtractions should be known from memory.',
+            coreObjective: 'Subtraction within ten',
+            expectedLevel: "As with addition, children should gain fluency with all subtraction facts up to ten.",
+            suggestedPractice: 'This type of question can be approached initially by counting backwards from the starting number, or by removing items from an initial set and counting how many remain. Relate the question to word problems; eg. if Molly has 9 sweets and eats six of them how many does she have left? Also relate the question to the corresponding addition question: ? + 6 = 9. Use the students recall of the results of addition to help learn the results of these single digit subtractions.',
             practiceQuestions: [
               {
                 text: 'What number do you need to add to six to get nine?',
@@ -258,7 +260,17 @@ export default {
                 submitted: null,
                 cue: 'Answer',
               },
-            ]
+            ],
+            learningResources: [
+              {
+                description: "Quick subtraction using columns",
+                link: "https://www.mathsisfun.com/numbers/subtraction-quick.html"
+              },
+              {
+                description: "Oxford Owl guide to teching subtraction",
+                link: "https://assets.oxfordowl.co.uk/2014/05/13/10/29/46/467/PX_MathsContent_BK_SubtractionInSchool_01_CH.pdf"
+              }
+            ],
           },
         },
 
@@ -295,6 +307,7 @@ export default {
           cue: "Answer",
             hint: {
             coreObjective: 'Adding with tens and units, crossing a ten',
+            expectedLevel: "Pupils need to have a strategy for confidently and fluently carrying out calculations",
             suggestedPractice: "When the total number of units in a sum is greater than ten we need to represent the extra tens in the tens column, and add these to the tens we already have in the sum. This could be thought of as trading up ten units into one ten. In this question the 65 has 5 units already so when we add on the extra 9 units we get a total of 14 units. We can then partition this 14 into 1 ten and 4 units. The 65 in the question already had 6 tens, so the extra ten we get from the sum of the units gives us 7 tens in total, with 4 extra units. We write this as 74 and call it seventy four. An alternative approach is to 'use up' 5 out of the 9 units to bring the 65 up to 70 (65 + 5), which leaves us with 4 extra units (9 - 5). This approach may be more natural for children who have been practicing number bonds to ten and so can quickly spot the number of units needed to get up to the next ten. Another approach that works well in this example is to ask first the different question 65 + 10. This is easily seen to be 75 by counting tens and units. The answer to the real question is 1 less than this because we are only adding 9 instead of 10, so the real answer must be 74. Encourage a range of apporaches and encourage the student to explain their apporach.",
             practiceQuestions: [
               {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Key Stage 1 Maths</h1>
+    <h1>Year 2</h1>
       <question-scroll/>
   </div>
 </template>

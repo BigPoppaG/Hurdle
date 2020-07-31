@@ -20,22 +20,7 @@
             class="headline grey lighten-2"
             primary-title
         >
-            Core Objective
-        </v-card-title>
-
-        <v-card-text class="text-sm-left">
             {{ hint.coreObjective }}
-        </v-card-text>
-        </div>
-
-        <v-divider></v-divider>
-
-        <div v-if='"expectedLevel" in hint'>
-        <v-card-title
-            class="headline grey lighten-2"
-            primary-title
-        >
-            Expected Level
         </v-card-title>
 
         <v-card-text class="text-sm-left">
@@ -70,7 +55,7 @@
             class="headline grey lighten-2"
             primary-title
         >
-            Suggested Practice
+            Teaching Guide
         </v-card-title>
 
         <v-card-text class="text-sm-left">

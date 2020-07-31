@@ -2,7 +2,7 @@
   <div class="question">
     <v-container>
       <v-row align-text-left>
-        <v-col cols="12"><vue-mathjax :formula="question.text" :options="{chtml: {displayAlign: 'left'}}"></vue-mathjax></v-col>
+        <v-col cols="12"><div class="question-text"><vue-mathjax :formula="question.text" :options="{chtml: {displayAlign: 'left'}}"></vue-mathjax></div></v-col>
         <v-col cols="12" v-if=showImage ><img class="question-image" :src="question.image.src" :height="question.image.height" :width="question.image.width"></v-col>
         <v-col cols="12" class="question-answer">
           <v-text-field 
@@ -17,7 +17,7 @@
             @keyup.enter="submit"
             :append-icon="correct ? 'mdi-check-bold' : 'mdi-pencil'">
           </v-text-field>
-
+          <question-help v-if: showHelp :help="question.help" :submitted="question.submitted"></question-help>
           <question-hint v-if: showHint :hint="question.hint" :submitted="question.submitted"></question-hint>
         </v-col>      
       </v-row>
@@ -28,11 +28,13 @@
 <script>
 import { VueMathjax } from 'vue-mathjax'
 import QuestionHint from '../components/QuestionHint.vue'
+import QuestionHelp from '../components/QuestionHelp.vue'
 export default {
   name: 'Question',
   components: {
     'vue-mathjax': VueMathjax,
-    'question-hint': QuestionHint
+    'question-hint': QuestionHint,
+    'question-help': QuestionHelp 
   },
   props: { 
     question: Object,
@@ -40,7 +42,7 @@ export default {
   }, 
   data: function() { 
     return { 
-      submitted: this.question.submitted
+      submitted: this.question.submitted,
     } 
   }, 
   computed: { 
@@ -49,6 +51,9 @@ export default {
     },
     showHint: function() {
       return "hint" in this.question
+    },  
+    showHelp: function() {
+      return "help" in this.question
     },  
     showImage: function() {
       return "image" in this.question
@@ -75,5 +80,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .question-text { float: left;}
   .question-image {  width: 100%;  height: auto; }
 </style>

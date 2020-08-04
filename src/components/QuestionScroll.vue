@@ -34,6 +34,13 @@ export default {
           answer: '7',
           submitted: null,
           cue: 'Answer',
+          commonErrors: {
+            '25': {
+              description: "When you write 25 it doesn't mean 2 + 5, it means 2 tens plus 5 units. The meaning of the 2 changes because it is writen in the tens column. When we write 2 + 5 we are asking for 2 units plus 5 units which is 7 units, so the answer would just be writen as 7.",
+              image: '',
+              videoLinks: ''
+            }  
+          },          
           hint: {
             coreObjective: 'Addition up to ten',
             expectedLevel: "By Year 2,  children should be able to recall all of the additions up to ten quickly from memory without any counting on. This should be practiced until all pairs of numbers up to ten can be recalled easily. In particular, children should be fluent with 'number bonds', that is, pairs of numbers that add to give 10.",
@@ -73,13 +80,6 @@ export default {
                 link: 'https://www.topmarks.co.uk/addition/robot-addition'    
               },
             ],
-            commonErrors: {
-              '25': {
-                description: "When you write 25 it doesn't mean 2 + 5, it means 2 tens plus 5 units. The meaning of the 2 changes because it is writen in the tens column. When we write 2 + 5 we are asking for 2 units plus 5 units which is 7 units, so the answer would just be writen as 7.",
-                image: '',
-                videoLinks: ''
-              }  
-            }
           },
         },
 
@@ -375,9 +375,6 @@ export default {
   },
 
   computed: {
-    correct() {
-      return this.questions[this.currentQuestion].submitted == this.questions[this.currentQuestion].answer
-    },
   },
 
   methods: {

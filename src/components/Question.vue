@@ -18,6 +18,7 @@
             :append-icon="correct ? 'mdi-check-bold' : 'mdi-pencil'">
           </v-text-field>
         </v-col>
+        <!--v-col cols="12" v-if: submittedCommonError><question-common-error :error="question.commonErrors[this.submitted]"></question-common-error></v-col-->        
         <v-col cols="12" v-if: showHelp><question-help :help="question.help" :submitted="question.submitted"></question-help></v-col>
         <v-col cols="12" v-if: showHint><question-hint :hint="question.hint" :submitted="question.submitted"></question-hint></v-col>      
       </v-row>
@@ -29,12 +30,14 @@
 import { VueMathjax } from 'vue-mathjax'
 import QuestionHint from '../components/QuestionHint.vue'
 import QuestionHelp from '../components/QuestionHelp.vue'
+//import QuestionCommonError from '../components/QuestionCommonError.vue'
 export default {
   name: 'Question',
   components: {
     'vue-mathjax': VueMathjax,
     'question-hint': QuestionHint,
-    'question-help': QuestionHelp 
+    'question-help': QuestionHelp,
+    //'question-common-error': QuestionCommonError 
   },
   props: { 
     question: Object,
@@ -58,9 +61,9 @@ export default {
     showImage: function() {
       return "image" in this.question
     },      
-    showError: function() {
-      return false && !this.correct && !(this.submitted == null || this.submitted == '')
-    },          
+    submittedCommorError() {
+      return ("commonErrors" in this.question) && (this.submitted in this.question.commonErrors)
+    }
   }, 
   methods: {
     submit() {

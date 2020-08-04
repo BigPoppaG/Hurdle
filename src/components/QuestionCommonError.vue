@@ -1,6 +1,5 @@
 <template>
-  <div class="common-error">
-    <div>You said {{submitted}}. Good try, but you've made a mistake:</div>
+  <div class="common-error text-sm-left">
     <div v-if='"description" in error'>{{error.description}}</div>
     <div v-if='"image" in error'>
         <img v-bind:src="error.image">
@@ -24,8 +23,7 @@
 export default {
     name: 'CommonError',
     props: {
-      error: Object,
-      submitted: String,
+      error: Object
     },
 }
 </script>

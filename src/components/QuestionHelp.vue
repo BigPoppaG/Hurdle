@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-btn class="help-btn" left @click.prevent="displayHelp = !displayHelp"><v-icon right x-large color=blue>mdi-account-question</v-icon></v-btn>
-    <div><v-checkbox v-model="displayHelp" label=""></v-checkbox></div>
+    <v-btn class="help-btn" v-show="!displayHelp"  left @click.prevent="displayHelp = !displayHelp"><v-icon right x-large color=blue>mdi-account-question</v-icon></v-btn>
+    <div v-show=false><v-checkbox label=""></v-checkbox></div>
     <v-banner v-model="displayHelp" single-line transition="slide-y-transition">
       text
       <template v-slot:actions="{ dismiss }">

@@ -17,9 +17,9 @@
             @keyup.enter="submit"
             :append-icon="correct ? 'mdi-check-bold' : 'mdi-pencil'">
           </v-text-field>
-          <template v-if=false><question-help :help="question.help" :submitted="question.submitted"></question-help></template>
-          <question-hint v-if: showHint :hint="question.hint" :submitted="question.submitted"></question-hint>
-        </v-col>      
+        </v-col>
+        <v-col cols="12" v-if: showHelp><question-help :help="question.help" :submitted="question.submitted"></question-help></v-col>
+        <v-col cols="12" v-if: showHint><question-hint :hint="question.hint" :submitted="question.submitted"></question-hint></v-col>      
       </v-row>
     </v-container>
   </div>
